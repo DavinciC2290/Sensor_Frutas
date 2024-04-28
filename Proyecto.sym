@@ -1,0 +1,201 @@
+004-005 @READ_PROGRAM_MEMORY8.P1
+004-005 @WRITE_PROGRAM_MEMORY8.P2
+015     CCP_1_LOW
+015     CCP_1
+016     CCP_1_HIGH
+01B     CCP_2_LOW
+01B     CCP_2
+01C     CCP_2_HIGH
+020     @INTERRUPT_AREA
+021     @INTERRUPT_AREA
+022     @INTERRUPT_AREA
+023     @INTERRUPT_AREA
+024     @INTERRUPT_AREA
+025     @INTERRUPT_AREA
+026     @INTERRUPT_AREA
+027     @INTERRUPT_AREA
+028     @INTERRUPT_AREA
+029     @INTERRUPT_AREA
+02A     @INTERRUPT_AREA
+02B-02C strtok.save
+02D     @TRIS_C
+02E-02F contador
+030-031 red
+032-033 green
+034-035 blue
+036-037 MAIN.red
+038-039 MAIN.green
+03A-03B MAIN.blue
+03C-043 MAIN.manzana
+044-049 MAIN.fresa
+04A-051 MAIN.naranja
+052-05B MAIN.mandarina
+05C-05D TCS230_getFrequence_blue.frequence_blue
+05C-05D TCS230_getFrequence_green.frequence_green
+05C-05D TCS230_getFrequence_red.frequence_red
+05C     rgb_write_value.value_r
+05C     lcd_init.i
+05C-05D @PRINTF_LU_733.P1
+05C     @PSTRINGC7_733.@SCRATCH1
+05C     MAIN.@SCRATCH1
+05C     @PSTRINGR_9600_62_63.@SCRATCH1
+05D     rgb_write_value.value_g
+05D     lcd_init.@SCRATCH1
+05D     @PSTRINGC7_733.@SCRATCH2
+05D     @PSTRINGR_9600_62_63.@SCRATCH2
+05E     rgb_write_value.value_b
+05E     @PSTRINGC7_733.@SCRATCH3
+05E     @PRINTF_LU_733.@SCRATCH1
+05F     rgb_write_value.t_led
+05F     @PSTRINGC7_733.@SCRATCH4
+05F     @PRINTF_LU_733.@SCRATCH2
+060     rgb_write_value.ta_led_r
+060     @PRINTF_LU_733.@SCRATCH3
+061     rgb_write_value.ta_led_g
+061     @PRINTF_LU_733.@SCRATCH4
+062     rgb_write_value.ta_led_b
+062     @PRINTF_LU_733.@SCRATCH5
+063     rgb_write_value.tc_led_r
+063     @PRINTF_LU_733.@SCRATCH6
+064     rgb_write_value.tc_led_g
+064     @PRINTF_LU_733.@SCRATCH7
+065     lcd_putc.c
+065     rgb_write_value.tc_led_b
+066-067 map_int.valor
+066     lcd_gotoxy.x
+066     @delay_ms1.P1
+067     lcd_gotoxy.y
+068     lcd_gotoxy.address
+068-069 map_int.entradaMin
+069     lcd_gotoxy.@SCRATCH1
+06A     lcd_send_byte.address
+06A-06B map_int.entradaMax
+06B     lcd_send_byte.n
+06C-06D map_int.salidaMin
+06C     lcd_send_byte.@SCRATCH1
+06D     lcd_send_nibble.nibble
+06E-06F map_int.salidaMax
+070     map_int.@SCRATCH1
+071     map_int.@SCRATCH2
+072     map_int.@SCRATCH3
+073     map_int.@SCRATCH4
+074-075 @MUL1616.P1
+074-075 @DIV1616.P2
+076     @MUL1616.@SCRATCH1
+076     @DIV1616.@SCRATCH1
+077     @SCRATCH
+078     @SCRATCH
+078     _RETURN_
+079     @SCRATCH
+07A     @SCRATCH
+07B-07C @DIV1616.P1
+07B-07C @MUL1616.P2
+07F     @INTERRUPT_AREA
+0FF     @INTERRUPT_AREA
+107.6   C1OUT
+108.6   C2OUT
+10D-10E @WRITE_PROGRAM_MEMORY8.P1
+10D-10E @READ_PROGRAM_MEMORY8.P2
+17F     @INTERRUPT_AREA
+1FF     @INTERRUPT_AREA
+27F     @INTERRUPT_AREA
+2FF     @INTERRUPT_AREA
+37F     @INTERRUPT_AREA
+3FF     @INTERRUPT_AREA
+47F     @INTERRUPT_AREA
+4FF     @INTERRUPT_AREA
+57F     @INTERRUPT_AREA
+5FF     @INTERRUPT_AREA
+67F     @INTERRUPT_AREA
+6FF     @INTERRUPT_AREA
+77F     @INTERRUPT_AREA
+7FF     @INTERRUPT_AREA
+87F     @INTERRUPT_AREA
+8FF     @INTERRUPT_AREA
+97F     @INTERRUPT_AREA
+9FF     @INTERRUPT_AREA
+A7F     @INTERRUPT_AREA
+AFF     @INTERRUPT_AREA
+B7F     @INTERRUPT_AREA
+BFF     @INTERRUPT_AREA
+C7F     @INTERRUPT_AREA
+CFF     @INTERRUPT_AREA
+D7F     @INTERRUPT_AREA
+DFF     @INTERRUPT_AREA
+E7F     @INTERRUPT_AREA
+EFF     @INTERRUPT_AREA
+F7F     @INTERRUPT_AREA
+FFF     @INTERRUPT_AREA
+
+ROM Allocation:
+00004F  LCD_INIT_STRING.call
+000053  LCD_INIT_STRING.data
+000057  @const739.call
+000058  timer0_isr
+0000B3  @const821.call
+0000B9  @const824.call
+0000C0  @const826.call
+0000C6  @const828.call
+0000CB  @delay_ms1
+0000DF  lcd_send_nibble
+00010D  lcd_send_byte
+000134  lcd_init
+000163  TCS230_init
+000168  rgb_init
+000175  map_int
+000193  @MUL1616
+0001C0  @DIV1616
+0001F4  rgb_write_value
+000282  TSC230_clear
+000292  TCS230_getFrequence_red
+0002B7  TCS230_getFrequence_green
+0002DC  TCS230_getFrequence_blue
+000301  lcd_gotoxy
+000313  lcd_putc
+000337  @PSTRINGC7_733
+00038D  lcd_clear
+000395  @PRINTF_LU_733
+0003F8  @PSTRINGR_9600_62_63
+00040F  @cinit1
+00040F  MAIN
+000430  @cinit2
+
+Project Directory:
+    C:\Users\saul_\Desktop\Trabajos_universidad\Semestre_8\Microprocesadores y microcontroladores\Programas en C\ProyectoFrutas\
+
+Project Files:
+    Proyecto.c                                              [28-nov.-23 11:28  CRC=CD2E6FE9]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h [12-nov.-13 14:35  CRC=6CB1A611]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\stdio.h [31-jul.-07 13:24  CRC=4E4534F4]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\string.h [14-jul.-11 10:13  CRC=23EDEC8F]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\stddef.h [16-jul.-10 09:27  CRC=897CEC6C]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\ctype.h [03-ene.-08 13:55  CRC=2D1F019F]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD_16X2.c [20-nov.-23 23:18  CRC=F406DE8D]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\RGB_Control.c [24-nov.-23 09:58  CRC=8666CC47]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\TCS230.c [27-nov.-23 10:14  CRC=661E42C2]
+
+Source signature=A95955E0
+
+Units:
+    Proyecto (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   Proyecto.xsym
+    Errors:      Proyecto.err
+    Ext Symbols: Proyecto.esym
+    INHX8:       Proyecto.hex
+    Symbols:     Proyecto.sym
+    List:        Proyecto.lst
+    Debug/COFF:  Proyecto.cof
+    Project:     Proyecto.ccspjt
+    Call Tree:   Proyecto.tre
+    Statistics:  Proyecto.STA

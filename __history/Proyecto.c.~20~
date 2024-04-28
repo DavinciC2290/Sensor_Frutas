@@ -1,0 +1,92 @@
+#include <16f887.h>
+#fuses HS, NOWDT, NOPROTECT, NOPUT, NOLVP, BROWNOUT
+#use delay(clock=20M)
+//INSTRUCCIÓNES PARA UTILIZAR LOS PUERTOS EN LAS DEFINICIONES
+#use standard_io(D) 
+#use standard_io(C)
+#use standard_io(B)
+
+//CONFIGURACIÓN DE LA PANTALLA LCD
+#define LCD_DB4   PIN_D4
+#define LCD_DB5   PIN_D5
+#define LCD_DB6   PIN_D6
+#define LCD_DB7   PIN_D7
+#define LCD_RS    PIN_D2
+#define LCD_E     PIN_D3
+#include <LCD_16X2.c>
+
+//CONFIGURACION DEL LED RGB
+#define led_r PIN_C0
+#define led_g PIN_C1
+#define led_b PIN_C2
+#include <RGB_Control.c>
+
+//CONFIGURAMOS EL SENSONR
+#define P_TCS230 PIN_B7
+#define S2 PIN_B6
+#define S3 PIN_B5
+#include <TCS230.c>
+
+
+void main()
+{
+   //VARIABLES PARA GUARDAR LAS FRECUENCIAS DE CADA COLOR QUE CAPTA EL SENSOR
+   long red = 0;
+   long green = 0;
+   long blue = 0;
+   
+   //INICIALIZAMOS LA LCD, EL SENSOR Y EL LED RGB
+   lcd_init();
+   TCS230_init();
+   rgb_init();
+   rgb_write_value(0, 0, 0, COMMON_CATHODE); //INICIAMOS EL LED APAGADO
+   
+   while(true)
+   {
+      //ASIGNAMOS LAS FRECUENCIAS A NUESTRAS VARIABLES
+      red = TCS230_getFrequence_red();
+      green = TCS230_getFrequence_green();
+      blue = TCS230_getFrequence_blue();
+      
+      //FRECUENCIAS DE MANZANA
+      if((red >= 14 && red <= 45) && (green >= 69 && green <= 114) && (blue >= 45 && blue <= 90))
+      {
+         lcd_gotoxy(1, 2);
+         lcd_putc("Fr: Manzana");
+         rgb_write_value(196, 2, 2, COMMON_CATHODE);
+         delay_ms(500);
+         lcd_clear();
+      }
+      
+      //FRECUENCIA MANDARINA
+      if((red >= 0 && red <= 46) && (green >= 38 && green <= 44) && (blue >= 45 && blue <= 70))
+      {
+         lcd_gotoxy(1, 2);
+         lcd_putc("Fr: Mandarina");
+         rgb_write_value(255, 120, 0, COMMON_CATHODE);
+         delay_ms(500);
+         lcd_clear();
+      }
+      
+      lcd_clear();
+      lcd_gotoxy(1,1);
+      printf(lcd_putc, "R:%Lu", red);
+      lcd_gotoxy(6,1);
+      printf(lcd_putc, "G:%Lu", green);
+      lcd_gotoxy(12,1);
+      printf(lcd_putc, "B:%Lu", blue);
+      delay_ms(350);
+
+      //lcd_gotoxy(1, 1);
+      //lcd_putc("COLOR:");
+      //rgb_write_value(255, 0, 0, COMMON_CATHODE);
+      //lcd_gotoxy(1, 2);
+      //lcd_putc("ROJO");
+      //delay_ms(3000);
+      //lcd_clear();
+      
+      
+   }
+
+
+}

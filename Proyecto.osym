@@ -1,0 +1,46 @@
+_RETURN_
+CCP_1
+CCP_1_LOW
+CCP_1_HIGH
+CCP_2
+CCP_2_LOW
+CCP_2_HIGH
+C1OUT
+C2OUT
+@TRIS_C
+LCD_INIT_STRING
+contador
+red
+green
+blue
+
+Project Directory:
+    C:\Users\saul_\Desktop\Trabajos_universidad\Semestre_8\Microprocesadores y microcontroladores\Programas en C\ProyectoFrutas\
+
+Project Files:
+    Proyecto.c                                              [27-nov.-23 09:25  CRC=1F3DC537]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Devices\16f887.h [12-nov.-13 14:35  CRC=6CB1A611]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\LCD_16X2.c [20-nov.-23 23:18  CRC=F406DE8D]
+    ..\..\..\..\..\..\..\..\Program Files (x86)\PICC\Drivers\RGB_Control.c [24-nov.-23 09:58  CRC=8666CC47]
+
+Source signature=8CC3E263
+
+Units:
+    Proyecto (main)
+
+Compiler Settings:
+    Processor:      PIC16F887
+    Pointer Size:   16
+    ADC Range:      0-255
+    Opt Level:      9
+    Short,Int,Long: UNSIGNED: 1,8,16
+    Float,Double:   32,32
+    Output file:    Relocatable
+    Compile Mode:       CCS5
+
+Output Files:
+    XREF file:   Proyecto.xsym
+    Errors:      LCD_code.err
+    Ext Symbols: Proyecto.esym
+    Object:      Proyecto.o
+    Symbols:     Proyecto.osym

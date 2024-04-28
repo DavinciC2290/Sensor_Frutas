@@ -1,0 +1,17 @@
+[PROJECT]
+Target=Proyecto.hex
+Processor_Text=PIC16F887
+CCSVersion=5.025
+Compiler=PCM
+[Target Data]
+FileList=Proyecto.c
+[Proyecto.c]
+Type=4
+[mru-list]
+1=Proyecto.c
+[Opened Files]
+1=Proyecto.c
+2=
+[Units]
+Count=1
+1=Proyecto (main)
